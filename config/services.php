@@ -40,7 +40,11 @@ return [
     ],'facebook' => [
     'client_id' => '102423166874134',
     'client_secret' => '759f8c23268691e81872d1d518bcfb7f',
-    'redirect' => 'http://localhost/uet_supporter_v1/public/facebook/callback',
+    'redirect' => 'http://localhost/www/uet_suporter_v1/public/facebook/callback',
+    ],'google' => [
+    'client_id' => '929023425569-fl2armbnaio63o11qua0gk7f70bsbv8i.apps.googleusercontent.com',
+    'client_secret' => 'F1Ac7MOtqa1BAmUNtFWWs_Ob',
+    'redirect' => 'http://localhost/www/uet_suporter_v1/public/google/callback',
     ],
 
 ];

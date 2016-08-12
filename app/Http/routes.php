@@ -24,11 +24,15 @@ Route::get('/email',function(){
     $message->to('lytuanwork@gmail.com')->subject('Học laravel');
 });
 });
-Route::get('login', function () {
-    return view('login');
-});
-Route::get('trangchu',function(){
-	return view('master');
-});
+Route::get('login', ['as'=>'getLogin','uses'=>'LoginController@getLogin']);
+
+Route::get('trangchu',['as'=>'trangchu',function(){
+	return view('dashboard.main');
+}]);
 Route::get('facebook/redirect', 'Auth\SocialController@redirectToProvider');
 Route::get('facebook/callback', 'Auth\SocialController@handleProviderCallback');
+Route::get('google/redirect', 'Auth\SocialController@redirectToProviderGoogle');
+Route::get('google/callback', 'Auth\SocialController@handleProviderCallbackGoogle');
+
+Route::post('login',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
+Route::get('logout',['as'=>'getLogout','uses'=>'LoginController@getLogout']);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>UET-SUPPORTER</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -32,13 +32,16 @@
         <li><a href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{!!url('login/')!!}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#"><span class="glyphicon "><img class="avatar" src="{!!Auth::user()->avatar!!}" class="avatar"  alt="Ảnh của{!!Auth::user()->name!!}">{!!Auth::user()->name!!} </span> </a></li>
+        <li><a href="{!!url('logout/')!!}"><span class="glyphicon glyphicon-log-in"></span> Đăng xuất</a></li>
       </ul>
     </div>
   </div>
 </nav>
-  
-<div class="container-fluid text-center">
+  <div class="main">
+      @yield('content')
+  </div>
+{{-- <div class="container-fluid text-center">
   <div class="row content">
     <div class="col-sm-2 sidenav">
       <p><a href="#">Link</a></p>
@@ -62,7 +65,7 @@
     </div>
   </div>
 </div>
-
+ --}}
 <footer class="container-fluid text-center">
   <p>UET-SUPORTER</p>
   <p>Liên hệ:supporteruet@gmail.com</p>
