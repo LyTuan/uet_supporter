@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class LoginRequest extends Request
+class SignUpRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,15 +23,20 @@ class LoginRequest extends Request
      */
     public function rules()
     {
-        return [
+         return [
+            'txtName'=>'required',
             'txtMail'=>'required',
-            'txtPass'=>'required'
+            'txtPass'=>'required',
+            'txtRePass'=>'required|same:txtPass',
         ];
     }
     public function messages(){
         return [
+            'txtName.required'=>'Vui lòng nhập tên',
             'txtMail.required'=>'Vui lòng nhập mail',
-            'txtPass.required'=>'Vui lòng nhập Password'
+            'txtPass.required'=>'Vui lòng nhập Password',
+            'txtRePass.required'=>'Vui lòng nhập RePassword',
+            'txtRePass.same' =>'Hai mật khẩu không trùng nhau',
         ];
     }
 }

@@ -36,7 +36,7 @@ class SocialController extends Controller
         if($social){
             $u= User::where('email',$user->email)->first();
             Auth::login($u);
-            return redirect('/trangchu');
+            return redirect('/');
         }else{
             $temp = new Socials;
             $temp->provider_user_id = $user->id;
@@ -56,7 +56,7 @@ class SocialController extends Controller
             $temp->level='2';
             $temp->save();
             Auth::login($u);
-            return redirect('/trangchu');
+            return redirect('/');
         }
     }
 
@@ -84,7 +84,7 @@ class SocialController extends Controller
             if($social){
                 $u= User::where('email',$user->email)->first();
                 Auth::login($u);
-                return redirect('/trangchu');
+                return redirect('/');
             }else{
                 $temp = new Socials;
                 $temp->provider_user_id = $user->id;
@@ -104,7 +104,7 @@ class SocialController extends Controller
                 $temp->level='2';
                 $temp->save();
                 Auth::login($u);
-                return redirect('/trangchu');
+                return redirect('/');
         }
         // $user->token;
     }

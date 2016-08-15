@@ -24,15 +24,20 @@ Route::get('/email',function(){
     $message->to('lytuanwork@gmail.com')->subject('Học laravel');
 });
 });
-Route::get('login', ['as'=>'getLogin','uses'=>'LoginController@getLogin']);
+// Route::get('login', ['as'=>'getLogin','uses'=>'LoginController@getLogin']);
 
-Route::get('trangchu',['as'=>'trangchu',function(){
-	return view('dashboard.main');
-}]);
+// Route::get('trangchu',['as'=>'trangchu',function(){
+// 	return view('dashboard.main');
+// }]);
 Route::get('facebook/redirect', 'Auth\SocialController@redirectToProvider');
 Route::get('facebook/callback', 'Auth\SocialController@handleProviderCallback');
 Route::get('google/redirect', 'Auth\SocialController@redirectToProviderGoogle');
 Route::get('google/callback', 'Auth\SocialController@handleProviderCallbackGoogle');
 
-Route::post('login',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
-Route::get('logout',['as'=>'getLogout','uses'=>'LoginController@getLogout']);
+// Route::post('login',['as'=>'postLogin','uses'=>'LoginController@postLogin']);
+// Route::get('logout',['as'=>'getLogout','uses'=>'LoginController@getLogout']);
+// Route::get('signup',['as'=>'getSignup','uses'=>'Auth\SignupController@getSignUp']);
+// Route::post('signup',['as'=>'postSignup','uses'=>'Auth\SignupController@postSignUp']);
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

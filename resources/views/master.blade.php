@@ -66,10 +66,10 @@
   </div>
 </div>
  --}}
-<footer class="container-fluid text-center">
+{{-- <footer class="container-fluid text-center">
   <p>UET-SUPORTER</p>
   <p>Liên hệ:supporteruet@gmail.com</p>
-</footer>
+</footer> --}}
 
 </body>
 </html>

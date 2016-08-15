@@ -46,26 +46,25 @@
   <div class="form-group">
     <label class="control-label col-sm-2" for="email" >Email:</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="txtMail">
+      <input type="email" class="form-control" id="email" placeholder="Nhập email" name="txtMail">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" for="pwd" >Password:</label>
     <div class="col-sm-10"> 
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="txtPass">
+      <input type="password" class="form-control" id="pwd" placeholder="Nhập password" name="txtPass">
     </div>
   </div>
- 
+ <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd" >Nhập lại Password:</label>
+    <div class="col-sm-10"> 
+      <input type="repassword" class="form-control" id="pwd" placeholder="Nhập lại password" name="txtPass">
+    </div>
+  </div>
   
   <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Login</button>
-		<a class="btn btn-social-icon btn-facebook" href="{!!url('facebook/redirect')!!}">
-		<span class="fa fa-facebook"></span>
-		</a>
-		<a class="btn btn-social-icon btn-google" href="{!!url('google/redirect')!!}">
-		<span class="fa fa-google" ></span>
-		</a>
+      <button type="submit" class="btn btn-default">Đặt lại mật khẩu</button>
     </div>
   </div>
 </form>
