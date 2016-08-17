@@ -41,3 +41,5 @@ Route::get('google/callback', 'Auth\SocialController@handleProviderCallbackGoogl
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('LoginAPI','API\LoginAPIController');

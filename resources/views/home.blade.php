@@ -8,7 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <p><b>Thống kê: </b></p>
+                    <p>- Số người sử dụng server: {!!$data_user!!}</p>
                 </div>
             </div>
         </div>

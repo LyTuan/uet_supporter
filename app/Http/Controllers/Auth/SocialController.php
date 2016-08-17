@@ -13,7 +13,7 @@ use Auth;
 class SocialController extends Controller
 {
      /**
-     * Redirect the user to the GitHub authentication page.
+     * Redirect the user to the facebook authentication page.
      *
      * @return Response
      */
@@ -23,7 +23,7 @@ class SocialController extends Controller
     }
 
     /**
-     * Obtain the user information from GitHub.
+     * Obtain the user information from facebook.
      *
      * @return Response
      */
@@ -61,7 +61,7 @@ class SocialController extends Controller
     }
 
         /**
-     * Redirect the user to the GitHub authentication page.
+     * Redirect the user to the google authentication page.
      *
      * @return Response
      */
@@ -71,7 +71,7 @@ class SocialController extends Controller
      }
 
     /**
-     * Obtain the user information from GitHub.
+     * Obtain the user information from google.
      *
      * @return Response
      */
