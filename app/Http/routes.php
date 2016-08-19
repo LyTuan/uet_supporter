@@ -21,7 +21,7 @@ Route::get('/email',function(){
 	Mail::send('emails.welcome', $data, function ($message) {
     $message->from('supporteruet@gmail.com', 'UET-SUPPORTER');
 
-    $message->to('lytuanwork@gmail.com')->subject('Học laravel');
+    $message->to('lytuanwork@gmail.com')->subject('Introduction');
 });
 });
 // Route::get('login', ['as'=>'getLogin','uses'=>'LoginController@getLogin']);
@@ -43,3 +43,46 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('LoginAPI','API\LoginAPIController');
+
+Route::group(['middleware' => 'auth'], function () {
+//     Route::get('admin/profile', ['middleware' => 'auth', function () {
+    	
+// 	}]);
+	Route::group(['prefix'=>'uet_admin'], function(){
+		Route::get('/','HomeController@index');
+		Route::group(['prefix'=>'user'], function(){
+			Route::get('list',['as'=>'getListUser','middleware' => 'auth', 'uses'=>'Admin\UserController@getListUser']);
+			Route::get('add',['as'=>'getAddUser', 'uses'=>'Admin\UserController@getAddUser']);
+			Route::get('delete/{id}',['as'=>'getUserDel', 'uses'=>'Admin\UserController@getUserDel']);
+		});
+		Route::group(['prefix'=>'category'], function(){
+			Route::get('list',['as'=>'getListUser','middleware' => 'auth', 'uses'=>'Admin\UserController@getListUser']);
+			Route::get('add',['as'=>'getAddUser', 'uses'=>'Admin\UserController@getAddUser']);
+		});
+		Route::group(['prefix'=>'news'], function(){
+			Route::get('list',['as'=>'getListUser','middleware' => 'auth', 'uses'=>'Admin\UserController@getListUser']);
+			Route::get('add',['as'=>'getAddUser', 'uses'=>'Admin\UserController@getAddUser']);
+		});
+	});
+
+});
+
+Route::get('them',function(){
+	$user = new App\News;
+	$user->title = 'Thong tin title';
+	$user->link = 'Thong tin link';
+	$user->user_id='4';
+	$user->category_id='1';
+	$user->save();
+});
+Route::get('test',function(){
+	$user = App\News::where('link','/coltech/')->get()->toArray();
+	if($user==null){
+		echo "1";
+	}else{
+		foreach ($user as $key => $value) {
+		echo $value['title'];
+	}	
+	}
+	
+});
