@@ -1,0 +1,15 @@
+1. Phần login kiểm tra có trong database hay không
+POST :
+/LoginAPI 
+Tham số trong trường nhập là: txtMail và txtPass
+Giá trị trả về: 1 là có 
+ 				0  là không có
+2. Phần signup đăng ký 
+POST: 
+/LoginAPI/0
+Tham số trường nhập là: txtMail và txtPass
+Trả về json thằng vừa signup
+3. Phần liệt kê toàn bộ user trả về json của tất cả user
+GET:
+/LoginAPI
+Giá trị trả về: json của tất cả user

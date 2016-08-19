@@ -1,0 +1,8 @@
+1. Có hai loại quyền:
+- Student và admin
+-Student: chỉ có quyền xem thống kê và nhận gmail, notification trên facebook và trên app
+-admin: có quyền thêm danh mục, sửa xóa danh mục, thêm sửa xóa tin tức, thêm sửa xóa user.
+-admin:
+	admin@gmail.com
+	12345
+2.

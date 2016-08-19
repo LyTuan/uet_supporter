@@ -86,3 +86,5 @@ Route::get('test',function(){
 	}
 	
 });
+
+Route::resource('ResetPassAPI','API\ResetPassAPIController');
