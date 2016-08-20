@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/email',function(){
-	$data=['lytuan'];
-	Mail::send('emails.welcome', $data, function ($message) {
+	$data=News::where('status','2');
+	Mail::send('emails.welcome', ['data_news'=>$data], function ($message) {
     $message->from('supporteruet@gmail.com', 'UET-SUPPORTER');
 
     $message->to('lytuanwork@gmail.com')->subject('Introduction');

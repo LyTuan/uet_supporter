@@ -31,7 +31,7 @@ class SocialController extends Controller
     {
         
         $user = Socialite::driver('facebook')->user();
-        // dd($user);
+        dd($user);
         $social =Socials::where('provider_user_id',$user->id)->where('provider','facebook')->first();
         if($social){
             $u= User::where('email',$user->email)->first();

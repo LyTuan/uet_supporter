@@ -11,10 +11,16 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 class ResetPassAPIController extends Controller
 {
     use ResetsPasswords;
-     public function __construct()
+    /**
+     * Create a new password controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
         $this->middleware($this->guestMiddleware());
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -43,8 +49,12 @@ class ResetPassAPIController extends Controller
      */
     public function store(Request $request)
     {
-        //
-      
+        if($request->txtMail!=null){
+           
+        }else{
+            return 0;
+        }
+    
     }
 
     /**

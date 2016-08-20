@@ -96,12 +96,19 @@ class LoginAPIController extends Controller
     {
         //
         $user = new User;
-        $user->email=$request->txtMail;
-        $user->password=$request->txtPass;
-        $user->level='2';
-        $user->name=$request->txtName;
-        $user->save();
-        return response($user,201);
+        $findUserEmail = User::where('email',$request->txtMail)->get()->toArray();
+        $findUserName = User::where('name',$request->txtName)->get()->toArray();
+        if($findUserEmail==null){
+                $user->email=$request->txtMail;
+            $user->password=$request->txtPass;
+            $user->level='2';
+            $user->name=$request->txtName;
+            $user->save();
+            return 1;    
+        }else{
+            return 0;
+        }
+        
     }
 
     /**
